@@ -1,0 +1,7 @@
+.env
+node_modules
+dist
+.serverless
+tmp
+.DS_Store
+.build

@@ -1,0 +1,30 @@
+service: order-validator-starter-kit 
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+
+functions:
+  validateOrder:
+    handler: dist/handler.main
+    events:
+      - http:
+          path: validateOrder
+          method: post
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+
+package:
+  exclude:
+    - src/**
+    - tsconfig.json
+    - package-lock.json
+    - .gitignore
+    - tmp/**

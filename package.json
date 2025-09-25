@@ -1,0 +1,20 @@
+{
+  "name": "order-validator-starter-kit",
+  "version": "1.0.0",
+  "description": "A simple AWS Lambda function in TypeScript with serverless-offline",
+  "main": "handler.js",
+  "scripts": {
+    "build": "tsc",
+    "deploy_dev": "npm run build && serverless deploy --stage dev",
+    "deploy_prod": "npm run build && serverless deploy --stage prod",
+    "start": "npm run build && serverless offline"
+  },
+  "dependencies": {
+    "@kibocommerce/rest-sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.92",
+    "serverless-offline": "^8.8.1",
+    "typescript": "^4.5.5"
+  }
+}
